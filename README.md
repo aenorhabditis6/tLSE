@@ -66,7 +66,17 @@ The key innovation of the tLSE is the taming procedure that sets the estimator t
 
 ## 3. Proposed Research
 
-### 3.1 Theoretical Extensions
+### 3.1 Core Methodology
+
+Our central approach will be based on the tamed least squares estimator (tLSE), which has been demonstrated to achieve optimal minimax convergence rates for learning interaction kernels. The tLSE method's key innovation lies in its ability to handle ill-conditioned normal matrices by setting the estimator to zero when the smallest eigenvalue falls below a critical threshold.
+
+We will implement the tLSE with careful attention to:
+- Selection of appropriate basis functions for different types of SDEs
+- Efficient computation of normal matrices for large datasets
+- Optimal threshold selection for the taming procedure
+- Adaptive dimension selection based on data characteristics
+
+### 3.2 Theoretical Extensions
 
 We propose to extend the tLSE approach in several directions:
 
@@ -76,7 +86,7 @@ We propose to extend the tLSE approach in several directions:
 
 3. **Theoretical Analysis of Irregular Sampling**: We will extend the convergence analysis to cases where data is sampled at irregular time intervals, which is common in real-world applications.
 
-### 3.2 Implementation and Algorithms
+### 3.3 Implementation and Algorithms
 
 We will develop efficient algorithms for:
 
@@ -86,7 +96,7 @@ We will develop efficient algorithms for:
 
 3. **Eigenvalue Computation**: Efficiently computing and monitoring the smallest eigenvalues of the normal matrix for large-scale problems.
 
-### 3.3 Numerical Experiments
+### 3.4 Numerical Experiments
 
 We will conduct comprehensive numerical studies on:
 
@@ -119,7 +129,27 @@ To verify the minimax optimality, we will:
 - Compute errors for various estimation methods (not just tLSE)
 - Verify that no method achieves better worst-case performance than predicted by theory
 
-### 4.3 Practical Performance Metrics
+### 4.3 Comparative Analysis with Baseline Methods
+
+We will benchmark the tLSE against several established baseline methods for nonparametric estimation:
+
+1. **Standard Least Squares Estimator (LSE)**: The conventional approach without taming, implemented with Moore-Penrose pseudo-inverse to handle ill-conditioned matrices.
+
+2. **Tikhonov Regularization**: Adding a regularization term λ||φ||² to the objective function to stabilize estimation in the presence of small eigenvalues.
+
+3. **Truncated SVD Estimator**: Using singular value decomposition with truncation of small singular values.
+
+4. **Kernel Ridge Regression**: Employing kernel methods with appropriate radial basis functions.
+
+5. **Gaussian Process Regression**: Utilizing Bayesian nonparametric approaches with carefully selected priors.
+
+For each method, we will analyze:
+- Convergence rates under different smoothness conditions
+- Robustness to ill-conditioning 
+- Computational efficiency
+- Prediction accuracy on test trajectories
+
+### 4.4 Practical Performance Metrics
 
 Beyond theoretical validation, we will assess practical performance through:
 - Trajectory prediction accuracy using estimated kernels
