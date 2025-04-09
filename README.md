@@ -141,15 +141,6 @@ Our project will make several significant contributions:
 
 5. **Visualization Tools**: Developing novel visualization approaches for understanding the behavior of tLSE in high-dimensional spaces.
 
-## 6. Timeline and Milestones
-
-1. **Month 1**: Literature review and mathematical framework development
-2. **Month 2**: Implementation of simulation engines for test systems
-3. **Month 3**: Development of core tLSE algorithm and eigenvalue analysis tools
-4. **Month 4**: Extensive numerical testing and convergence rate verification
-5. **Month 5**: Refinement of methods based on experimental results
-6. **Month 6**: Documentation, analysis, and final report preparation
-
 ## 7. Conclusion
 
 This project aims to bridge theory and practice in nonparametric estimation of SDE kernels. By implementing and extending the tLSE methodology, we will demonstrate its effectiveness for learning both interaction kernels in particle systems and general state-dependent coefficients in SDEs. Our work will validate theoretical convergence rates empirically and develop practical tools for researchers working with stochastic dynamical systems.
